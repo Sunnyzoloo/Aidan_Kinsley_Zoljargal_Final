@@ -18,3 +18,5 @@ int main() {
 		stack.pop();
 	}
 }
+
+// reference https://www.geeksforgeeks.org/stack-in-cpp-stl/#
