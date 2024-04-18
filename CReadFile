@@ -1,1 +1,35 @@
+#include <iostream>
+#include <fstream>
+#include <stack>
+#include <string>
+using namespace std;
+
+void CReadFile(const string& filename, stack<string>& stack_odd, stack<string>& stack_even) 
+{
+    ifstream inputFile(filename);
+    if (!inputFile.is_open())
+    {
+        cout << "Cannot open the file " << filename << endl;
+        return;
+    }
+
+    string title;
+    int sequence = 1;
+    
+    while(getline(inputFile, title)) 
+    {
+        if (sequence % 2 == 0) 
+        {
+            stack_odd.push(title);
+        } 
+        else 
+        {
+            stack_even.push(title);
+        }
+        sequence++;
+    }
+
+    inputFile.close();
+}
+
 
